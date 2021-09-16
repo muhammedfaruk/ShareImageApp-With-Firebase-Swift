@@ -13,9 +13,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
+    /*
     var emailArray = [String]()
     var imageArray  = [String]()
     var commentArray = [String]()
+    */
+    
+    var postArray = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,35 +36,30 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let firestoreDataBase = Firestore.firestore()
         
-        firestoreDataBase.collection("Post").addSnapshotListener {snapshot, error in
-            
+        firestoreDataBase.collection("Post").order(by: "Tarih", descending: true).addSnapshotListener {snapshot, error in
+            //denemee
             if error != nil {// verileri çekmede hata yaşandı
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "Error")
             }else {
                 print("veri alnıyor")
                 if snapshot?.isEmpty == false && snapshot != nil{
                     
-                    self.commentArray.removeAll(keepingCapacity: false)
-                    self.emailArray.removeAll(keepingCapacity: false)
-                    self.imageArray.removeAll(keepingCapacity: false)
+                    self.postArray.removeAll(keepingCapacity: false)
                     
                     for document in snapshot!.documents{
                         
                         if let ImageUrlData = document.get("gorselURL") as? String{
                             
-                            self.imageArray.append(ImageUrlData)
-                            
-                        }
-                       
-                        if let mailData = document.get("gmail") as? String{
-                            self.emailArray.append(mailData)
-                        }
-                        if let commentData = document.get("yorum") as? String{
-                            
-                            self.commentArray.append(commentData)
+                            if let mailData = document.get("gmail") as? String{
+                                
+                                if let commentData = document.get("yorum") as? String{
+                                    
+                                    let post = Post(email: mailData, image: ImageUrlData, comment: commentData)
+                                    self.postArray.append(post)
+                                }
+                            }
                         }
                     }
-                    
                     self.tableView.reloadData()                                       
                 }
                              
@@ -73,7 +72,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return emailArray.count
+        return postArray.count
     }
     
        
@@ -82,14 +81,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedViewCell   // burada Cell id sini verdiğimiz hücreye ulaştık ve oradaki değişkenleri kullanabiliriz artık
         
-        cell.emailText.text = emailArray[indexPath.row]
+        cell.emailText.text = postArray[indexPath.row].email
+        cell.commentTextField.text = postArray[indexPath.row].comment
         
-        cell.commentTextField.text = commentArray[indexPath.row]
-        
-        cell.postImageView.sd_setImage(with: URL(string: imageArray[indexPath.row]), placeholderImage: UIImage(named: "placeholder"))
-        
-        
-        
+        cell.postImageView.sd_setImage(with: URL(string: postArray[indexPath.row].image), placeholderImage: UIImage(named: "placeholder"))
+                        
         return cell
     }
    

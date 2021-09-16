@@ -19,6 +19,7 @@
 		598FC7EE26F10B230058E66F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598FC7ED26F10B230058E66F /* FeedViewController.swift */; };
 		598FC7F026F10B2F0058E66F /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598FC7EF26F10B2F0058E66F /* UploadViewController.swift */; };
 		598FC7F226F10B3A0058E66F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598FC7F126F10B3A0058E66F /* SettingsViewController.swift */; };
+		59D0629626F377640010FD01 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D0629526F377640010FD01 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		598FC7ED26F10B230058E66F /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		598FC7EF26F10B2F0058E66F /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		598FC7F126F10B3A0058E66F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		59D0629526F377640010FD01 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		DB4CB64E04042CE5992C1DAA /* Pods-ShareImageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareImageApp.debug.xcconfig"; path = "Target Support Files/Pods-ShareImageApp/Pods-ShareImageApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F8F7E3C15D6C21AABE750928 /* Pods_ShareImageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareImageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				5969B1CD26EE930E003DFC2E /* ViewController.swift */,
 				5969B1CF26EE930E003DFC2E /* Main.storyboard */,
 				598FC7ED26F10B230058E66F /* FeedViewController.swift */,
+				59D0629526F377640010FD01 /* Post.swift */,
 				5983A83F26F2691300357181 /* FeedViewCell.swift */,
 				598FC7EF26F10B2F0058E66F /* UploadViewController.swift */,
 				598FC7F126F10B3A0058E66F /* SettingsViewController.swift */,
@@ -224,6 +227,7 @@
 				5969B1CE26EE930E003DFC2E /* ViewController.swift in Sources */,
 				598FC7F026F10B2F0058E66F /* UploadViewController.swift in Sources */,
 				5969B1CA26EE930E003DFC2E /* AppDelegate.swift in Sources */,
+				59D0629626F377640010FD01 /* Post.swift in Sources */,
 				598FC7EE26F10B230058E66F /* FeedViewController.swift in Sources */,
 				5969B1CC26EE930E003DFC2E /* SceneDelegate.swift in Sources */,
 				5983A84026F2691400357181 /* FeedViewCell.swift in Sources */,
@@ -375,8 +379,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 29LJW588CN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ShareImageApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -384,6 +389,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.muhammed.ShareImageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -395,8 +401,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 29LJW588CN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ShareImageApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -404,6 +411,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.muhammed.ShareImageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
