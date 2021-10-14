@@ -18,9 +18,9 @@ This app is a Social media prototype
 
 # What i learned while working on this project:
 
-How to integrate third party libraries in your app using Cocoapods and Swift Package Manager.
-How to store data in the cloud using Firebase Firestore.
-How to query and sort the Firebase database.
-How to use Firebase for user authentication, registration and login.
-How to work with UITableViews and how to set their data sources and delegates.
-Learned about the App Lifecycle and how to use viewWillAppear or viewWillDisappear.
+- How to integrate third party libraries in your app using Cocoapods and Swift Package Manager.
+- How to store data in the cloud using Firebase Firestore.
+- How to query and sort the Firebase database.
+- How to use Firebase for user authentication, registration and login.
+- How to work with UITableViews and how to set their data sources and delegates.
+- Learned about the App Lifecycle and how to use viewWillAppear or viewWillDisappear.
